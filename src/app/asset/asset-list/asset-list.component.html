@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Assets</h1>
+            </div>
+            <div class="col-md-6">
+ 
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectNewAssetPage()">New Asset</button>
+            </div>
+          </div>
+ 
+        </header>
+      </section>
+ 
+      <section class="main">
+ 
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let asset of assets">
+            <th scope="row">{{asset.id}}</th>
+            <td>{{asset.name}}</td>
+            <td>{{asset.description}}</td>
+            <td>{{asset.status}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="editAssetPage(asset)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteAsset(asset)">Delete</button>
+            </td>
+          </tr>
+ 
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

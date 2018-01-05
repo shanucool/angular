@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <form novalidate [formGroup]="assetForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="name">
+            </div>
+ 
+            <div class="form-group">
+              <label>Description</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="description">
+            </div>
+          </fieldset>
+ 
+          <div class="form-group">
+            <label>Status</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="status">
+          </div>
+ 
+          <button type="submit" class="btn btn-primary"  [disabled]="!assetForm.valid" >Submit</button>
+          <button type="button" class="btn btn-warning" (click)="redirectAssetPage()">Cancel</button>
+          <!--<pre>{{assetForm.value | json}}</pre>-->
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
